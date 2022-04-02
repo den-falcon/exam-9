@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="mt-5">
+        <h3 class="mt-4 mb-0 fw-bold fs-2">{{ album.name }}</h3>
+        <hr class="text-dark mt-1">
+            <div class="mb-4">
+                <p><span class="fw-bold">Автор:</span><a href="{% url 'accounts:profile' album.author_id %}"> {{ album.author }}</a></p>
+                <p><span class="fw-bold">Описание:</span> {{ album.description }}</p>
+                <p><span class="fw-bold">Дата:</span> {{ album.created_at }}</p>
+            </div>
+        <h3 class="mt-4 mb-0 fw-bold fs-2">Фото в альбоме</h3>
+        <hr class="text-dark mt-1">
+        <div class="row justify-content-start">
+            {% for image in images %}
+                {% include 'partial/img_card.html' %}
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock content %}

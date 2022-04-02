@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}Редактирование фото{% endblock %}
+{% block content %}
+    <div class="container">
+        <form method="POST">
+            {% include "partial/form.html" with button_text="Изменить" %}
+        </form>
+    </div>
+{% endblock %}

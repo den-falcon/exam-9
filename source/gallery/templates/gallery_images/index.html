@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="mt-5">
+        <h3 class="mt-4 mb-0 fw-bold fs-2">Галерея</h3>
+        <hr class="text-dark mt-1">
+        <div class="row justify-content-start">
+            {% for image in images %}
+                {% include 'partial/img_card.html' %}
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock content %}

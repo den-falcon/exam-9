@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Пользователь{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="mt-5">
+            <h3 class="mt-4 mb-0 fw-bold fs-2">Фото пользователя</h3>
+            <hr class="text-dark mt-1">
+            <div class="row justify-content-start">
+                {% for image in images %}
+                    {% include 'partial/img_card.html' %}
+                {% endfor %}
+            </div>
+        </div>
+        <h3 class="mt-4 mb-0 fw-bold fs-2">Альбомы пользователя</h3>
+        <hr class="text-dark mt-1">
+        <div class="row justify-content-start">
+            {% for album in albums %}
+                {% include 'partial/album_card.html' %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
