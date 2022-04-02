@@ -1,0 +1,41 @@
+<div class="col-4 mb-4">
+    <div class="card h-100">
+        <div class="d-flex card-header bg-info text-light">
+            <a class="flex-grow-1 text-light"
+               href="{% url 'gallery:images_detail_view' image.pk %}">{{ image.author }} | {{ image.created_at }}</a>
+            {% if user.is_authenticated %}
+                {% if perms.gallery.change_image or user == image.author %}
+                    <a class="text-light" href="{% url 'gallery:images_update_view' image.pk %}"><i
+                            class="fs-4 ms-2 fas fa-edit"></i></a>
+                {% endif %}
+                {% if perms.gallery.delete_image or user == image.author %}
+                    <a class="text-light" href="{% url 'gallery:images_delete_view' image.pk %}"><i
+                            class="fs-4 ms-2 fas fa-trash-alt"></i></a>
+                {% endif %}
+            {% endif %}
+        </div>
+        <div class="card-body p-0">
+            <img class="w-100" src="{{ image.img.url }}" alt="#">
+            <div class="p-2">
+                <p><span class="fw-bold">Подпись:</span> {{ image.caption }}</p>
+                {% if image.album %}
+                    <p><span class="fw-bold">Альбом:</span> <a
+                            href="{% url 'gallery:albums_detail_view' image.album_id %}">{{ image.album.name }}</a></p>
+                {% endif %}
+                {% if user.is_authenticated %}
+                    {% if not image.is_favorites %}
+                        <button class="btn btn-info" name="images-favorite"
+                                data-request-url="{% url 'gallery:image_favorite' image.pk %}"
+                                data-is-liked="false">Добавить в избранное
+                        </button>
+                    {% else %}
+                        <button class="btn btn-info" name="images-favorite"
+                                data-request-url="{% url 'gallery:image_favorite' image.pk %}"
+                                data-is-liked="true">Удалить из избранного
+                        </button>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

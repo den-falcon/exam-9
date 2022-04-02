@@ -1,0 +1,246 @@
+[
+{
+    "model": "gallery.favorites",
+    "pk": 8,
+    "fields": {
+        "user": 3,
+        "content_type": 8,
+        "object_id": 11
+    }
+},
+{
+    "model": "gallery.favorites",
+    "pk": 9,
+    "fields": {
+        "user": 3,
+        "content_type": 8,
+        "object_id": 10
+    }
+},
+{
+    "model": "gallery.favorites",
+    "pk": 10,
+    "fields": {
+        "user": 3,
+        "content_type": 8,
+        "object_id": 9
+    }
+},
+{
+    "model": "gallery.favorites",
+    "pk": 11,
+    "fields": {
+        "user": 3,
+        "content_type": 8,
+        "object_id": 2
+    }
+},
+{
+    "model": "gallery.favorites",
+    "pk": 12,
+    "fields": {
+        "user": 3,
+        "content_type": 8,
+        "object_id": 1
+    }
+},
+{
+    "model": "gallery.favorites",
+    "pk": 13,
+    "fields": {
+        "user": 3,
+        "content_type": 7,
+        "object_id": 1
+    }
+},
+{
+    "model": "gallery.favorites",
+    "pk": 15,
+    "fields": {
+        "user": 1,
+        "content_type": 8,
+        "object_id": 11
+    }
+},
+{
+    "model": "gallery.favorites",
+    "pk": 16,
+    "fields": {
+        "user": 2,
+        "content_type": 8,
+        "object_id": 2
+    }
+},
+{
+    "model": "gallery.favorites",
+    "pk": 17,
+    "fields": {
+        "user": 2,
+        "content_type": 7,
+        "object_id": 2
+    }
+},
+{
+    "model": "gallery.album",
+    "pk": 1,
+    "fields": {
+        "name": "Первый альбом",
+        "description": "Это первый альбом",
+        "author": 1,
+        "created_at": "2022-04-02T12:50:58.160Z",
+        "is_private": false
+    }
+},
+{
+    "model": "gallery.album",
+    "pk": 2,
+    "fields": {
+        "name": "Второй альбом",
+        "description": "Это второй альбом",
+        "author": 1,
+        "created_at": "2022-04-02T12:53:58.210Z",
+        "is_private": false
+    }
+},
+{
+    "model": "gallery.album",
+    "pk": 3,
+    "fields": {
+        "name": "Третий тестовый",
+        "description": "Третий тестовый",
+        "author": 2,
+        "created_at": "2022-04-02T12:56:53.563Z",
+        "is_private": false
+    }
+},
+{
+    "model": "gallery.image",
+    "pk": 1,
+    "fields": {
+        "img": "images/photo_2021-12-20_04-35-57.jpg",
+        "caption": "Тестовая подпись",
+        "created_at": "2022-04-02T06:45:43.113Z",
+        "author": 1,
+        "is_private": true,
+        "album": null,
+        "token": "4d199b6d-1b03-4317-96c1-6d26d65f30f2"
+    }
+},
+{
+    "model": "gallery.image",
+    "pk": 2,
+    "fields": {
+        "img": "images/gtr.jpg",
+        "caption": "Вторая тестовая подпись",
+        "created_at": "2022-04-02T09:44:48.182Z",
+        "author": 1,
+        "is_private": false,
+        "album": null,
+        "token": null
+    }
+},
+{
+    "model": "gallery.image",
+    "pk": 3,
+    "fields": {
+        "img": "gallery_images/wal_02.jpg",
+        "caption": "Третье фото",
+        "created_at": "2022-04-02T11:29:25.735Z",
+        "author": 2,
+        "is_private": false,
+        "album": null,
+        "token": null
+    }
+},
+{
+    "model": "gallery.image",
+    "pk": 5,
+    "fields": {
+        "img": "gallery_images/22459ff25f8eff76bddf34124cc2c85b16f4cd4a_large.jpg",
+        "caption": "Четвертое фото",
+        "created_at": "2022-04-02T12:07:24.943Z",
+        "author": 3,
+        "is_private": false,
+        "album": null,
+        "token": null
+    }
+},
+{
+    "model": "gallery.image",
+    "pk": 6,
+    "fields": {
+        "img": "gallery_images/depositphotos_107694484-stock-photo-little-boy.jpg",
+        "caption": "Пятое фото",
+        "created_at": "2022-04-02T12:07:59.313Z",
+        "author": 3,
+        "is_private": false,
+        "album": null,
+        "token": "31c12d2b-f2de-47d6-9952-eda762a357ec"
+    }
+},
+{
+    "model": "gallery.image",
+    "pk": 7,
+    "fields": {
+        "img": "gallery_images/EQgJ4p77Aeo.jpg",
+        "caption": "Шестое фото",
+        "created_at": "2022-04-02T12:19:15.952Z",
+        "author": 3,
+        "is_private": false,
+        "album": null,
+        "token": null
+    }
+},
+{
+    "model": "gallery.image",
+    "pk": 8,
+    "fields": {
+        "img": "gallery_images/images1.jpg",
+        "caption": "Седьмое фото",
+        "created_at": "2022-04-02T12:20:39.768Z",
+        "author": 2,
+        "is_private": true,
+        "album": null,
+        "token": null
+    }
+},
+{
+    "model": "gallery.image",
+    "pk": 9,
+    "fields": {
+        "img": "gallery_images/images3.jpg",
+        "caption": "Восьмое фото",
+        "created_at": "2022-04-02T12:21:02.948Z",
+        "author": 2,
+        "is_private": false,
+        "album": null,
+        "token": null
+    }
+},
+{
+    "model": "gallery.image",
+    "pk": 10,
+    "fields": {
+        "img": "gallery_images/images4.jpg",
+        "caption": "Девятое фото",
+        "created_at": "2022-04-02T12:21:39.956Z",
+        "author": 2,
+        "is_private": false,
+        "album": null,
+        "token": null
+    }
+},
+{
+    "model": "gallery.image",
+    "pk": 11,
+    "fields": {
+        "img": "gallery_images/images5.jpg",
+        "caption": "Одиннадцатое фото",
+        "created_at": "2022-04-02T12:22:20.329Z",
+        "author": 1,
+        "is_private": false,
+        "album": 1,
+        "token": "5872756e-0baf-4487-95fe-073f86579691"
+    }
+}
+]

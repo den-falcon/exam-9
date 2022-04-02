@@ -1,0 +1,35 @@
+<div class="col-4 mb-4">
+    <div class="card h-100">
+        <div class="d-flex card-header bg-info text-light">
+            <a class="flex-grow-1 text-light"
+               href="{% url 'gallery:albums_detail_view' album.pk %}">{{ album.author }} | {{ album.created_at }}</a>
+            {% if user.is_authenticated %}
+                {% if perms.gallery.change_album or user == album.author %}
+                    <a class="text-light" href="{% url 'gallery:albums_update_view' album.pk %}"><i
+                            class="fs-4 ms-2 fas fa-edit"></i></a>
+                {% endif %}
+                {% if perms.gallery.delete_album or user == album.author %}
+                    <a class="text-light" href="{% url 'gallery:albums_delete_view' album.pk %}"><i
+                            class="fs-4 ms-2 fas fa-trash-alt"></i></a>
+                {% endif %}
+            {% endif %}
+        </div>
+        <div class="card-body p-0">
+            <p><span class="fw-bold">Название:</span> {{ album.name }}</p>
+            <p><span class="fw-bold">Описание:</span> {{ album.description|default:"Нет описания" }}</p>
+            {% if user.is_authenticated %}
+                {% if not image.is_favorites %}
+                    <button class="btn btn-info" name="album-favorite"
+                            data-request-url="{% url 'gallery:album_favorite' album.pk %}"
+                            data-is-liked="false">Добавить в избранное
+                    </button>
+                {% else %}
+                    <button class="btn btn-info" name="album-favorite"
+                            data-request-url="{% url 'gallery:album_favorite' album.pk %}"
+                            data-is-liked="true">Удалить из избранного
+                    </button>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</div>

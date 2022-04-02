@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Create Task{% endblock %}
+{% block content %}
+    <div class="container">
+        <h1>Загрузка фото</h1>
+        <form action="" method="post" enctype="multipart/form-data">
+            {% include "partial/form.html" with button_text="Загрузить" %}
+        </form>
+        <br>
+        <a href="{% url "gallery:index" %}" class="btn btn-info">На главную</a>
+    </div>
+{% endblock %}

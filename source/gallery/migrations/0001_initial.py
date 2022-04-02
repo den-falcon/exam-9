@@ -29,12 +29,12 @@ class Migration(migrations.Migration):
             name='Image',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('img', models.ImageField(upload_to='images/', verbose_name='Фото')),
+                ('img', models.ImageField(upload_to='gallery_images/', verbose_name='Фото')),
                 ('caption', models.TextField(max_length=500, verbose_name='Подпись')),
                 ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')),
                 ('is_private', models.BooleanField(default=False, verbose_name='Приватноcть')),
-                ('album', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='images', to='gallery.album', verbose_name='Альбом')),
-                ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='images', to=settings.AUTH_USER_MODEL, verbose_name='Автор')),
+                ('album', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='gallery_images', to='gallery.album', verbose_name='Альбом')),
+                ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='gallery_images', to=settings.AUTH_USER_MODEL, verbose_name='Автор')),
             ],
         ),
     ]

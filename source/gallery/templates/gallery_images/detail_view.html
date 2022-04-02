@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="mt-5">
+        <h3 class="mt-4 mb-0 fw-bold fs-2">Подробнее о фотографии</h3>
+        <hr class="text-dark mt-1">
+        <div class="row justify-content-start">
+            <div class="col-6 mb-4">
+                <img class="w-100" src="{{ image.img.url }}" alt="#">
+            </div>
+            <div class="col-6 mb-4">
+                <p><span class="fw-bold">Автор: </span><a href="{% url 'accounts:profile' image.author_id %}">{{ image.author }}</a></p>
+                <p><span class="fw-bold">Подпись: </span> {{ image.caption }}</p>
+                <p><span class="fw-bold">Дата: </span> {{ image.created_at }}</p>
+                {% if image.album %}
+                    <p><span class="fw-bold">Альбом: </span> <a
+                            href="{% url 'gallery:albums_detail_view' image.album_id %}">{{ image.album.name }}</a></p>
+                {% endif %}
+                {% if image.author == user %}
+                    {% if image.token %}
+                        <p><span class="fw-bold">Доступ по ссылке: </span> <a
+                                href="{% url 'gallery:token_image' image.token %}">http://127.0.0.1:8000{% url 'gallery:token_image' image.token %}</a>
+                        </p>
+                        <a class="btn btn-info" href="{% url 'gallery:token_image_generate' image.pk %}">Обновить
+                            ссылку</a>
+                        {% else %}
+                        <a class="btn btn-info" href="{% url 'gallery:token_image_generate' image.pk %}">Сгенерировать
+                            ссылку</a>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+        <h3 class="mt-4 mb-0 fw-bold fs-2">Добавили в избранное</h3>
+        <hr class="text-dark mt-1">
+    {% for favorite in image.favorites.all %}
+        <a href="{% url 'accounts:profile' favorite.user.pk %}">{{ favorite.user }}</a>
+    {% endfor %}
+    </div>
+
+{% endblock content %}
